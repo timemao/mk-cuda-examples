@@ -1,0 +1,6 @@
+#/bin/bash
+DIR=demo
+SDK_PATH=~/CUDA-4.0/NVIDIA_GPU_Computing_SDK
+SDK_LIB0=$SDK_PATH/C/lib
+echo $SDK_PATH
+nvcc -O3 -L $SDK_LIB0 -I $SDK_PATH/C/common/inc simpleGLmain.cpp simpleVBO.cpp $DIR/callbacksVBO.cpp $DIR/kernelVBO.cu -lglut -lGLEW -lGLU -lcutil_x86_64 -lGL -o testDemo

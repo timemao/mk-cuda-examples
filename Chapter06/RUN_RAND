@@ -1,0 +1,30 @@
+size=10
+for op in 0 1 2
+do
+./testGather $size 1000 $op
+done
+
+size=100
+for op in 0 1 2
+do
+./testGather $size 1000 $op
+done
+
+size=1000
+for op in 0 1 2
+do
+./testGather $size 1000 $op
+done
+
+size=10000
+for op in 0 1 2
+do
+./testGather $size 1000 $op
+done
+
+size=100000
+for op in 0 1 2
+do
+./testGather $size 1000 $op
+done
+

@@ -1,0 +1,4 @@
+./testLive &
+ sleep 5
+
+sh send

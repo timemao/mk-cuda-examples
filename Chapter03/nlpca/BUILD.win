@@ -1,0 +1,6 @@
+#Change the arch to be the type of your GPU
+nvcc -O3 -arch=sm_21 --use_fast_math -Xcompiler "/openmp /Ox" nlpcaNM.cu -o nlpcaNM_GPU32
+nvcc -O3 -arch=sm_21 -D USE_DBL --use_fast_math -Xcompiler "/openmp /Ox" nlpcaNM.cu -o nlpcaNM_GPU64
+
+nvcc -O3 -D USE_HOST -Xcompiler "/openmp /Ox" nlpcaNM.cu -o nlpcaNM_CPU32
+nvcc -O3 -D USE_DBL -D USE_HOST -Xcompiler "/openmp /Ox" nlpcaNM.cu -o nlpcaNM_CPU64

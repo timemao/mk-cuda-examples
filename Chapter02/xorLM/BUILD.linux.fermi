@@ -1,0 +1,17 @@
+echo "Install levmar first and change the path to LMINC"
+exit
+NVCC="nvcc -O3 -arch=sm_20 -use_fast_math "
+LMINC="-I ./levmar-2.5 -L ./levmar-2.5"
+BIN=bin
+
+#Levenberg-Marquardt
+# single-precision GPU test
+$NVCC -Xcompiler -fopenmp $LMINC xorLM.cu -o $BIN/xorLM_GPU32 -llevmar -lblas -llapack
+# single-precision HOST test
+$NVCC -D USE_HOST -Xcompiler -fopenmp $LMINC xorLM.cu -o $BIN/xorLM_CPU32 -llevmar -llapack -lblas
+
+# double-precision GPU test
+$NVCC -D USE_DBL -Xcompiler -fopenmp $LMINC xorLM.cu -o $BIN/xorLM_GPU64 -llevmar -llapack -lblas
+# double-precision HOST test
+$NVCC -D USE_DBL -D USE_HOST -Xcompiler -fopenmp $LMINC xorLM.cu -o $BIN/xorLM_CPU64 -llevmar -llapack -lblas
+

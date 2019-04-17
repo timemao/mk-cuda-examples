@@ -1,0 +1,9 @@
+bin/genData32 nlpca32.dat 10000000
+mpiexec -np 1 bin/nlpca32_nm_mpi nlpca32.dat > nlpca32.01.mpi.results.txt
+mpiexec -np 2 bin/nlpca32_nm_mpi nlpca32.dat > nlpca32.02.mpi.results.txt
+rm nlpca32.dat
+
+bin/genData64 nlpca64.dat 10000000
+mpiexec -np 1 bin/nlpca64_nm_mpi nlpca64.dat > nlpca64.01.mpi.results.txt
+mpiexec -np 2 bin/nlpca64_nm_mpi nlpca64.dat > nlpca64.02.mpi.results.txt
+rm nlpca64.dat

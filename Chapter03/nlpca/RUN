@@ -1,0 +1,5 @@
+./nlpcaNM_GPU32 > results/GPU32.txt
+./nlpcaNM_GPU64 > results/GPU64.txt
+
+./nlpcaNM_CPU32 > results/CPU32.txt
+./nlpcaNM_CPU64 > results/CPU64.txt

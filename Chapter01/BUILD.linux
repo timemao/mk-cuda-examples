@@ -1,0 +1,6 @@
+nvcc seqSerial.cpp -o seqSerial
+nvcc seqRuntime.cu -o seqRuntime
+nvcc seqCuda.cu -o seqCuda
+nvcc seqBig.cu -o seqBig
+nvcc -Xcompiler -fopenmp seqAsync.cu -o seqAsync
+nvcc -g -G badRuntime.cu -o badRuntime

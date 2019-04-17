@@ -1,0 +1,7 @@
+#Intended for use with a visual studio 2010 enabled cygwin shell
+nvcc seqSerial.cpp -o seqSerial
+nvcc seqRuntime.cu -o seqRuntime
+nvcc seqCuda.cu -o seqCuda
+nvcc seqBig.cu -o seqBig
+nvcc -Xcompiler "/openmp /Ox" seqAsync.cu -o seqAsync
+nvcc -g -G badRuntime.cu -o badRuntime

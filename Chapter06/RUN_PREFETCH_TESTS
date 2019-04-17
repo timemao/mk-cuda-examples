@@ -1,0 +1,5 @@
+for size in 1000 100 10 1 0.1 0.01
+do
+echo $size; ./testPre $size 0; ./testPre $size 1; ./testPre $size 2
+done
+

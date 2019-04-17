@@ -1,0 +1,2 @@
+nvcc -D DO_CHECK -Xcompiler "/openmp /Ox" -arch sm_20 testPre.cu -o testPre
+nvcc -Xcompiler "/openmp /Ox" -arch sm_20 testGather.cu -o testGather

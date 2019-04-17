@@ -1,0 +1,3 @@
+nvcc -D DO_CHECK -Xcompiler -fopenmp -O3 -arch sm_20 testPre.cu -o testPre &
+nvcc -Xcompiler -fopenmp -O3 -arch sm_20 testGather.cu -o testGather &
+wait

@@ -1,0 +1,6 @@
+#change the arch to your GPU type
+nvcc -O3 -arch=sm_20 -use_fast_math -Xcompiler -fopenmp xorNM.cu -o xorNM_GPU32
+nvcc -O3 -arch=sm_20 -D USE_DBL --use_fast_math -Xcompiler -fopenmp xorNM.cu -o xorNM_GPU64
+
+nvcc -O3 -D USE_HOST -Xcompiler -fopenmp xorNM.cu -o xorNM_CPU32
+nvcc -O3 -D USE_DBL -D USE_HOST -Xcompiler -fopenmp xorNM.cu -o xorNM_CPU64

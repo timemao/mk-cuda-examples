@@ -1,0 +1,8 @@
+FFMPEG=ffmpeg
+FFPLAY=ffplay
+DEVICE="-f video4linux2 -i /dev/video0"
+PIX="-f rawvideo -pix_fmt rgb24"
+SIZE="-s 320x240"
+#SIZE="-s 640x480"
+
+$FFMPEG -an -r 50 $SIZE $DEVICE $PIX tcp:localhost:32000

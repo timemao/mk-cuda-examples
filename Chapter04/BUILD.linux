@@ -1,0 +1,2 @@
+#Change the arch to be the type of your GPU
+nvcc -O3 -arch=sm_21 -Xcompiler -fopenmp arithmeticILP.cu -o arithmeticILP

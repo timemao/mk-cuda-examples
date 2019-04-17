@@ -1,0 +1,7 @@
+#Use the visual studio version of bash from the directory Microsoft
+#change the arch to your GPU type
+nvcc -O3 -arch=sm_21 --use_fast_math -Xcompiler "/openmp /Ox" xorNM.cu -o xorNM_GPU32
+nvcc -O3 -arch=sm_21 -D USE_DBL --use_fast_math -Xcompiler "/openmp /Ox" xorNM.cu -o xorNM_GPU64
+
+nvcc -O3 -D USE_HOST -Xcompiler "/openmp /Ox" xorNM.cu -o xorNM_CPU32
+nvcc -O3 -D USE_DBL -D USE_HOST -Xcompiler "/openmp /Ox" xorNM.cu -o xorNM_CPU64
